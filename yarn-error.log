@@ -1,0 +1,63 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  16.15.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:71:26)
+
+npm manifest: 
+  {
+    "name": "shopbackend",
+    "version": "1.0.0",
+    "description": "ShopBackend with typescript",
+    "main": "index.js",
+    "dependencies": {
+      "@types/express": "^4.17.13",
+      "@types/node": "^17.0.34",
+      "dotenv": "^16.0.1",
+      "eslint": "^8.15.0",
+      "express": "^4.18.1",
+      "ts-node": "^10.7.0",
+      "typescript": "^4.6.4"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.16"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "dev": "ts-node src/server.ts",
+      "start": "ts-node build/server.js",
+      "build": "tsc -p .",
+      "command": "ts-node command.ts",
+      "start:ts":"tsc -w"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/siamakahmadi/shopBackend.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/siamakahmadi/shopBackend/issues"
+    },
+    "homepage": "https://github.com/siamakahmadi/shopBackend#readme"
+  
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
