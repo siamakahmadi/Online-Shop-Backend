@@ -1,6 +1,6 @@
-import App from './app'
+import App from './app';
 
 const port: number = 5000;
 
-const application = new App(port);
-application.start();
+const Application = new App(port)
+Application.start();
