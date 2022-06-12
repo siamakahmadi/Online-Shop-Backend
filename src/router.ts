@@ -1,14 +1,22 @@
-import { Application, Request, Response } from "express";
-class Router {
+import { Application, Request, Response, Router } from "express";
+class RouteEngine {
     private app: Application;
+    private routers: Map<string, Router> = new Map<string, Router>()
     constructor(app: Application) {
         this.app = app
     }
+
+    public registerRouter(route: string, router: Router) {
+        this.routers.set(route, router);
+    }
+
     public run(): void {
-        this.app.get('/api/v1/users', (req: Request, res: Response) => {
-            res.send({ success: true })
+
+        this.routers.forEach((router: Router, route: string) => {
+            this.app.use(route, router);
         })
+
     }
 }
 
-export default Router;
+export default RouteEngine;
