@@ -1,14 +1,15 @@
-import { Request, Response } from "express";
+import { Request, Response } from 'express'
 
-class UserController {
-    constructor() {
+class UsersController {
+  constructor () {
+    this.index = this.index.bind(this)
+  }
 
-    }
+  public async index (req: Request, res: Response) {
+    res.send({allUsers:[]})
+  }
 
-    public index(res: Response, req: Request) {
-        res.send({ allUsers: [] })
-    }
+  
 }
 
-
-export default UserController;
+export default UsersController

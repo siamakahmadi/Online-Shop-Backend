@@ -1,30 +1,22 @@
 import * as express from 'express'
 import { Application } from 'express'
-import Router from './router'
-import userRouter from './components/users/userRouter'
+import RouteService from './router/routeService'
 
 class App {
-    public app: Application;
-    public port: number;
-    private router: Router;
-
-    constructor(port: number) {
-        this.app = express();
-        this.port = port;
-        this.router = new Router(this.app)
-        this.registerRouters()
+    private readonly app: Application;
+    private readonly port: number;
+    private readonly router: RouteService;
+    constructor (port: number) {
+      this.app = express()
+      this.port = port
+      this.router = new RouteService(this.app)
     }
 
-    private registerRouters() {
-        this.router.registerRouter('/api/v1/users', userRouter)
+    public start (): void {
+      this.router.run()
+      this.app.listen(this.port, () => {
+        console.log(`app instance is running on port: ${this.port}`)
+      })
     }
-
-    public start(): void {
-        this.router.run()
-        this.app.listen(this.port, () => {
-            console.log(`app is running ${this.port}`)
-        })
-    }
-
 }
-export default App;
+export default App
