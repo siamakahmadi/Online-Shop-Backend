@@ -1,15 +1,16 @@
-import { model, Schema } from "mongoose";
+import { model } from "mongoose";
+import { Schema } from "mongoose";
 
 import IUser from "./IUser";
 
 
 const userSchema: Schema = new Schema({
-    firstName: { type: String, required: true },
-    lastName: { tyoe: String, required: true },
-    emial: { type: String, required: true, unique: true },
-    mobile: { type: String, required: true, unique: true },
-    totalOrder: { type: Number, default: 0 },
-    walle: { type: Number, default: 0 },
+    firstName: { type: String },
+    lastName: { tyoe: String },
+    emial: { type: String},
+    mobile: { type: String },
+    totalOrder: { type: Number },
+    walle: { type: Number },
     createdAt: { type: Date, default: Date.now() }
 
 })
