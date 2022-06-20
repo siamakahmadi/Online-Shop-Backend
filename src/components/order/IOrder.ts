@@ -7,5 +7,6 @@ export default interface IOrder extends Document {
     finalPrice: number,
     status: number,
     createdAt: Date,
+    orderLines:[Object],
     updateAt: Date
 }
