@@ -7,16 +7,15 @@ class UsersController {
   }
 
   public async index(req: Request, res: Response) {
-    res.send({ allUsers: [] })
+    res.send({ allUsers: {} })
   }
 
   public async create(req: Request, res: Response) {
     const newUser = User.create({
-
-      firstName: 'Siamak',
-      lastName: 'Ahmadi',
-      emial: 'siamak@gmail.com',
-      mobile: '09175293160'
+        firstName: 'Siamak',
+        lastName: 'Ahmadi',
+        emial: 'siamak@gmail.com',
+        mobile: '09175293160'
     }
     )
 
