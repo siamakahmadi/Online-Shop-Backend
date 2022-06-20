@@ -1,4 +1,4 @@
-import { Schema, model, Schema, Schema } from "mongoose";
+import { model, Schema } from "mongoose";
 
 import IProduct from "./IProduct";
 import productStatus from "./productStatus";
@@ -13,7 +13,7 @@ const productSchema: Schema = new Schema({
     gallery: { type: [String] },
     createdAt: { type: Date, default: Date.now },
     updateAt: { type: Date, default: Date.now },
-    status: { type: productStatus, default: productStatus.INIT },
+    // status: { type: productStatus, default: productStatus.INIT },
 
 })
 

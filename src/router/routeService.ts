@@ -1,5 +1,7 @@
 import { Application, Request, Response, Router } from 'express'
 import userRouter from '../components/users/userRouter';
+import productRouter from '../components/product/productRouter';
+
 import RouteEngine from './router'
 
 class RouteService {
@@ -14,6 +16,8 @@ class RouteService {
 
     public bindRouters () {
         this.router.registerRouter('/api/v1/users',userRouter)
+        this.router.registerRouter('/api/v1/products',productRouter)
+
     }
 
     public run () {
